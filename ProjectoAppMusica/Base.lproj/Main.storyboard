@@ -102,6 +102,7 @@
                         <barButtonItem key="backBarButtonItem" title="Voltar!" id="cIE-y3-BhV"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="tableViewUltimas" destination="1h1-T2-2F6" id="Btg-UP-V96"/>
                         <segue destination="ejj-8F-04P" kind="show" identifier="LastTableToDetail" id="gpS-FI-dsq"/>
                     </connections>
                 </viewController>

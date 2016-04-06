@@ -7,23 +7,84 @@
 //
 
 #import "UltimasViewController.h"
+#import <AFNetworking.h>
+#import "Songs.h"
 
-@interface UltimasViewController ()
+@interface UltimasViewController () <UITableViewDataSource, UITableViewDelegate>
+
+@property (weak, nonatomic) IBOutlet UITableView *tableViewUltimas;
 
 @end
 
 @implementation UltimasViewController
 
+{
+    NSArray<Songs *> *_recentSongs;
+}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    
+    [self getrecentSongs];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void) getrecentSongs {
+
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"A obter as mais recentes..." message:nil preferredStyle:UIAlertControllerStyleAlert];
+
+    [self presentViewController:alert animated:YES completion:nil];
+
+
+AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+
+[manager GET:@"http://reality6.com/musicservicejson.php?tipo=ultimas"
+  parameters:nil
+    progress:nil
+     success:^(NSURLSessionDataTask *task, id responseObject) {
+         
+                      NSLog(@"download!!!!");
+                      NSLog(@"%@", responseObject);
+         
+         
+         [self showRecentSongsFetched:<#(NSArray *)#>:responseObject];
+         
+         [alert dismissViewControllerAnimated:YES completion:nil];
+     }
+     failure:^(NSURLSessionDataTask *task, NSError *error) {
+         
+         NSLog(@"erro!!!!");
+         NSLog(@"%@", error);
+         
+         [alert dismissViewControllerAnimated:YES completion:nil];
+     }
+ ];
 }
 
+- (void)showRecentSongsFetched:(NSArray *)fetched {
+    
+    NSLog(@"%@", fetched);
+    
+    NSMutableArray<Songs *> *recentSongs = [[NSMutableArray alloc] init];
+    
+    for (NSDictionary *dRecentSongs in fetched) {
+        
+        Songs *s = [[Songs alloc] init];
+        s.songId = dSongs[@"id"];
+        s.artist = dSongs[@"userId"];
+        s.title = dSongs[@"title"];
+        s.duration = dSongs[@"duration"];
+        s.thumbURL = dSongs[@"thumbUrl"];
+        
+        
+        [recentSongs addObject:p];
+    }
+    
+    _recentsongs = [NSArray arrayWithArray:recentSongs];
+    
+    [self.tableViewUltimas reloadData];
+}
 /*
 #pragma mark - Navigation
 
