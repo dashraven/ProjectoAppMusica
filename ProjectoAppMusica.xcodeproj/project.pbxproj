@@ -14,6 +14,16 @@
 		04C2C4F11CB2DCA70023F1C5 /* ProjectoAppMusica.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 04C2C4EF1CB2DCA70023F1C5 /* ProjectoAppMusica.xcdatamodeld */; };
 		04C2C4F31CB2DCA70023F1C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04C2C4F21CB2DCA70023F1C5 /* Assets.xcassets */; };
 		04C2C4F61CB2DCA70023F1C5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04C2C4F41CB2DCA70023F1C5 /* LaunchScreen.storyboard */; };
+		04F74ECC1CB590CD003C9AC2 /* UltimasViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F74ECB1CB590CD003C9AC2 /* UltimasViewController.m */; };
+		04F74ECF1CB590E3003C9AC2 /* UltimasDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F74ECE1CB590E3003C9AC2 /* UltimasDetailViewController.m */; };
+		04F74ED21CB59101003C9AC2 /* DestaquesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F74ED11CB59101003C9AC2 /* DestaquesViewController.m */; };
+		04F74ED51CB59115003C9AC2 /* DestaquesDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F74ED41CB59115003C9AC2 /* DestaquesDetailViewController.m */; };
+		04F74ED81CB5912D003C9AC2 /* FavoritosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F74ED71CB5912D003C9AC2 /* FavoritosViewController.m */; };
+		04F74EDB1CB59139003C9AC2 /* FavoritosDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F74EDA1CB59139003C9AC2 /* FavoritosDetailViewController.m */; };
+		04F74EDE1CB59149003C9AC2 /* ProcurarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F74EDD1CB59149003C9AC2 /* ProcurarViewController.m */; };
+		04F74EE11CB5915A003C9AC2 /* ProcurarResultadosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F74EE01CB5915A003C9AC2 /* ProcurarResultadosViewController.m */; };
+		04F74EE41CB5916B003C9AC2 /* ProcurarResultadosDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F74EE31CB5916B003C9AC2 /* ProcurarResultadosDetailViewController.m */; };
+		04F74EE81CB592DE003C9AC2 /* Songs.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F74EE71CB592DE003C9AC2 /* Songs.m */; };
 		B22D624192CCCBFC716E9358 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 02830F07F983C04CA31EB76E /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +40,26 @@
 		04C2C4F21CB2DCA70023F1C5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04C2C4F51CB2DCA70023F1C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04C2C4F71CB2DCA70023F1C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04F74ECA1CB590CD003C9AC2 /* UltimasViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UltimasViewController.h; sourceTree = "<group>"; };
+		04F74ECB1CB590CD003C9AC2 /* UltimasViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UltimasViewController.m; sourceTree = "<group>"; };
+		04F74ECD1CB590E3003C9AC2 /* UltimasDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UltimasDetailViewController.h; sourceTree = "<group>"; };
+		04F74ECE1CB590E3003C9AC2 /* UltimasDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UltimasDetailViewController.m; sourceTree = "<group>"; };
+		04F74ED01CB59101003C9AC2 /* DestaquesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DestaquesViewController.h; sourceTree = "<group>"; };
+		04F74ED11CB59101003C9AC2 /* DestaquesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DestaquesViewController.m; sourceTree = "<group>"; };
+		04F74ED31CB59115003C9AC2 /* DestaquesDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DestaquesDetailViewController.h; sourceTree = "<group>"; };
+		04F74ED41CB59115003C9AC2 /* DestaquesDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DestaquesDetailViewController.m; sourceTree = "<group>"; };
+		04F74ED61CB5912D003C9AC2 /* FavoritosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoritosViewController.h; sourceTree = "<group>"; };
+		04F74ED71CB5912D003C9AC2 /* FavoritosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoritosViewController.m; sourceTree = "<group>"; };
+		04F74ED91CB59139003C9AC2 /* FavoritosDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoritosDetailViewController.h; sourceTree = "<group>"; };
+		04F74EDA1CB59139003C9AC2 /* FavoritosDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoritosDetailViewController.m; sourceTree = "<group>"; };
+		04F74EDC1CB59149003C9AC2 /* ProcurarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProcurarViewController.h; sourceTree = "<group>"; };
+		04F74EDD1CB59149003C9AC2 /* ProcurarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProcurarViewController.m; sourceTree = "<group>"; };
+		04F74EDF1CB5915A003C9AC2 /* ProcurarResultadosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProcurarResultadosViewController.h; sourceTree = "<group>"; };
+		04F74EE01CB5915A003C9AC2 /* ProcurarResultadosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProcurarResultadosViewController.m; sourceTree = "<group>"; };
+		04F74EE21CB5916B003C9AC2 /* ProcurarResultadosDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProcurarResultadosDetailViewController.h; sourceTree = "<group>"; };
+		04F74EE31CB5916B003C9AC2 /* ProcurarResultadosDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProcurarResultadosDetailViewController.m; sourceTree = "<group>"; };
+		04F74EE61CB592DE003C9AC2 /* Songs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Songs.h; sourceTree = "<group>"; };
+		04F74EE71CB592DE003C9AC2 /* Songs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Songs.m; sourceTree = "<group>"; };
 		B17FE753F545E09940320FB4 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		F7FFA28ED90F8A725DCF71CD /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -49,6 +79,7 @@
 		04C2C4D71CB2DCA70023F1C5 = {
 			isa = PBXGroup;
 			children = (
+				04F74EE91CB592E7003C9AC2 /* ModelClasses */,
 				04C2C4E21CB2DCA70023F1C5 /* ProjectoAppMusica */,
 				04C2C4E11CB2DCA70023F1C5 /* Products */,
 				732E475D661555949FE7883D /* Pods */,
@@ -67,6 +98,7 @@
 		04C2C4E21CB2DCA70023F1C5 /* ProjectoAppMusica */ = {
 			isa = PBXGroup;
 			children = (
+				04F74EE51CB59174003C9AC2 /* ViewControllers */,
 				04C2C4E61CB2DCA70023F1C5 /* AppDelegate.h */,
 				04C2C4E71CB2DCA70023F1C5 /* AppDelegate.m */,
 				04C2C4E91CB2DCA70023F1C5 /* ViewController.h */,
@@ -87,6 +119,41 @@
 				04C2C4E41CB2DCA70023F1C5 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		04F74EE51CB59174003C9AC2 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				04F74EE21CB5916B003C9AC2 /* ProcurarResultadosDetailViewController.h */,
+				04F74EE31CB5916B003C9AC2 /* ProcurarResultadosDetailViewController.m */,
+				04F74EDF1CB5915A003C9AC2 /* ProcurarResultadosViewController.h */,
+				04F74EE01CB5915A003C9AC2 /* ProcurarResultadosViewController.m */,
+				04F74EDC1CB59149003C9AC2 /* ProcurarViewController.h */,
+				04F74EDD1CB59149003C9AC2 /* ProcurarViewController.m */,
+				04F74ED91CB59139003C9AC2 /* FavoritosDetailViewController.h */,
+				04F74EDA1CB59139003C9AC2 /* FavoritosDetailViewController.m */,
+				04F74ED61CB5912D003C9AC2 /* FavoritosViewController.h */,
+				04F74ED71CB5912D003C9AC2 /* FavoritosViewController.m */,
+				04F74ED31CB59115003C9AC2 /* DestaquesDetailViewController.h */,
+				04F74ED41CB59115003C9AC2 /* DestaquesDetailViewController.m */,
+				04F74ED01CB59101003C9AC2 /* DestaquesViewController.h */,
+				04F74ED11CB59101003C9AC2 /* DestaquesViewController.m */,
+				04F74ECD1CB590E3003C9AC2 /* UltimasDetailViewController.h */,
+				04F74ECE1CB590E3003C9AC2 /* UltimasDetailViewController.m */,
+				04F74ECA1CB590CD003C9AC2 /* UltimasViewController.h */,
+				04F74ECB1CB590CD003C9AC2 /* UltimasViewController.m */,
+			);
+			name = ViewControllers;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		04F74EE91CB592E7003C9AC2 /* ModelClasses */ = {
+			isa = PBXGroup;
+			children = (
+				04F74EE61CB592DE003C9AC2 /* Songs.h */,
+				04F74EE71CB592DE003C9AC2 /* Songs.m */,
+			);
+			name = ModelClasses;
 			sourceTree = "<group>";
 		};
 		732E475D661555949FE7883D /* Pods */ = {
@@ -227,10 +294,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04F74EE41CB5916B003C9AC2 /* ProcurarResultadosDetailViewController.m in Sources */,
+				04F74ED81CB5912D003C9AC2 /* FavoritosViewController.m in Sources */,
+				04F74ED21CB59101003C9AC2 /* DestaquesViewController.m in Sources */,
+				04F74EDE1CB59149003C9AC2 /* ProcurarViewController.m in Sources */,
 				04C2C4EB1CB2DCA70023F1C5 /* ViewController.m in Sources */,
+				04F74EE11CB5915A003C9AC2 /* ProcurarResultadosViewController.m in Sources */,
+				04F74EE81CB592DE003C9AC2 /* Songs.m in Sources */,
 				04C2C4E81CB2DCA70023F1C5 /* AppDelegate.m in Sources */,
+				04F74ED51CB59115003C9AC2 /* DestaquesDetailViewController.m in Sources */,
 				04C2C4E51CB2DCA70023F1C5 /* main.m in Sources */,
 				04C2C4F11CB2DCA70023F1C5 /* ProjectoAppMusica.xcdatamodeld in Sources */,
+				04F74EDB1CB59139003C9AC2 /* FavoritosDetailViewController.m in Sources */,
+				04F74ECC1CB590CD003C9AC2 /* UltimasViewController.m in Sources */,
+				04F74ECF1CB590E3003C9AC2 /* UltimasDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

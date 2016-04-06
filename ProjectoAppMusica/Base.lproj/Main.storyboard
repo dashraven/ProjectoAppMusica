@@ -26,7 +26,7 @@
         <!--Ainda a sair do forno...-->
         <scene sceneID="jyt-Ne-KaQ">
             <objects>
-                <viewController id="Rvj-1Q-O6g" sceneMemberID="viewController">
+                <viewController id="Rvj-1Q-O6g" customClass="UltimasViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="LCd-S2-mDs"/>
                         <viewControllerLayoutGuide type="bottom" id="EXU-Cp-A96"/>
@@ -109,10 +109,10 @@
             </objects>
             <point key="canvasLocation" x="-774" y="-2413"/>
         </scene>
-        <!--View Controller-->
+        <!--Ultimas Detail View Controller-->
         <scene sceneID="n4Q-VU-hTY">
             <objects>
-                <viewController id="ejj-8F-04P" sceneMemberID="viewController">
+                <viewController id="ejj-8F-04P" customClass="UltimasDetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="w6y-TF-a0o"/>
                         <viewControllerLayoutGuide type="bottom" id="CbW-RA-LX6"/>
@@ -235,10 +235,10 @@
             </objects>
             <point key="canvasLocation" x="95" y="-2413"/>
         </scene>
-        <!--View Controller-->
+        <!--Destaques Detail View Controller-->
         <scene sceneID="oNg-Oh-5f5">
             <objects>
-                <viewController id="hGc-Gj-gz0" sceneMemberID="viewController">
+                <viewController id="hGc-Gj-gz0" customClass="DestaquesDetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="CMj-zB-rR0"/>
                         <viewControllerLayoutGuide type="bottom" id="AF9-mT-hZI"/>
@@ -360,10 +360,10 @@
             </objects>
             <point key="canvasLocation" x="95" y="-1682"/>
         </scene>
-        <!--View Controller-->
+        <!--Favoritos Detail View Controller-->
         <scene sceneID="4XL-BD-h0G">
             <objects>
-                <viewController id="2gX-re-xSe" sceneMemberID="viewController">
+                <viewController id="2gX-re-xSe" customClass="FavoritosDetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pfy-BS-V2M"/>
                         <viewControllerLayoutGuide type="bottom" id="cVs-Uu-L7s"/>
@@ -462,10 +462,10 @@
             </objects>
             <point key="canvasLocation" x="95" y="-866"/>
         </scene>
-        <!--View Controller-->
+        <!--Procurar Resultados Detail View Controller-->
         <scene sceneID="P5D-gb-rce">
             <objects>
-                <viewController id="iXQ-De-Us8" sceneMemberID="viewController">
+                <viewController id="iXQ-De-Us8" customClass="ProcurarResultadosDetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xiB-nO-C6J"/>
                         <viewControllerLayoutGuide type="bottom" id="SBa-5L-1B0"/>
@@ -576,7 +576,7 @@
         <!--O que está na berlinda!-->
         <scene sceneID="JEv-6t-mWY">
             <objects>
-                <viewController id="XVy-70-hYJ" sceneMemberID="viewController">
+                <viewController id="XVy-70-hYJ" customClass="DestaquesViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bNL-Lj-ccB"/>
                         <viewControllerLayoutGuide type="bottom" id="URN-so-Pvk"/>
@@ -642,7 +642,7 @@
         <!--O que o meu povo gosta!-->
         <scene sceneID="Mt9-IE-WHp">
             <objects>
-                <viewController id="wgk-IN-YcN" sceneMemberID="viewController">
+                <viewController id="wgk-IN-YcN" customClass="FavoritosViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ghf-Dq-itI"/>
                         <viewControllerLayoutGuide type="bottom" id="BMA-3n-OR6"/>
@@ -708,7 +708,7 @@
         <!--Aqui encontra tudo!!!-->
         <scene sceneID="1nM-Xa-SKq">
             <objects>
-                <viewController id="QCu-SC-Sww" sceneMemberID="viewController">
+                <viewController id="QCu-SC-Sww" customClass="ProcurarViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6nX-nd-bqF"/>
                         <viewControllerLayoutGuide type="bottom" id="V8h-tw-c12"/>
@@ -773,10 +773,10 @@
             </objects>
             <point key="canvasLocation" x="-2831" y="-694"/>
         </scene>
-        <!--View Controller-->
+        <!--Procurar Resultados View Controller-->
         <scene sceneID="apC-ls-TZ1">
             <objects>
-                <viewController id="fDY-BX-xX2" sceneMemberID="viewController">
+                <viewController id="fDY-BX-xX2" customClass="ProcurarResultadosViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="yIa-6r-zfQ"/>
                         <viewControllerLayoutGuide type="bottom" id="lbG-oM-vKa"/>
