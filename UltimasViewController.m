@@ -114,12 +114,12 @@ AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     
 
     
+    
     labelTitle.text = [NSString stringWithFormat:@"%@", s.artist];
-    //labelTitle.text = [NSString stringWithFormat:@"%@", s.artist];
-    //labelArtist.text = [NSString stringWithFormat:@"%@", s.title];
-    //labelDuration.text = [NSString stringWithFormat:@"%@", s.duration];
-    //[cell.imageView setImageWithURL:[NSURL URLWithString:s.thumbURL]];
-    //[cell.imageView setImage:[UIImage imageNamed:@"star"]];
+    labelArtist.text = [NSString stringWithFormat:@"%@", s.title];
+    labelDuration.text = [NSString stringWithFormat:@"%@", s.duration];
+    [cell.imageView setImageWithURL:[NSURL URLWithString:s.thumbURL]];
+    [cell.imageView setImage:[UIImage imageNamed:@"star"]];
     
     return cell;
 }
