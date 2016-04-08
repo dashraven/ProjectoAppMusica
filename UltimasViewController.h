@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+@class Songs;
 
 @interface UltimasViewController : UIViewController
+@property (strong, nonatomic) Songs *latestSongs;
 
 @end

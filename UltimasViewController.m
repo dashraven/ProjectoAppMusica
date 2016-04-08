@@ -9,6 +9,7 @@
 #import "UltimasViewController.h"
 #import <AFNetworking.h>
 #import "Songs.h"
+#import <AFNetworking/UIImageView+AFNetworking.h>
 
 @interface UltimasViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -26,13 +27,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
     [self getrecentSongs];
 }
 
 - (void) getrecentSongs {
+   UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"A obter as mais recentes..." message:nil preferredStyle:UIAlertControllerStyleAlert ];
+    
+       UIAlertAction *alertButtonActionOK = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
 
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"A obter as mais recentes..." message:nil preferredStyle:UIAlertControllerStyleAlert];
+    
+       }];
+        [alert addAction:alertButtonActionOK];
 
     [self presentViewController:alert animated:YES completion:nil];
 
@@ -48,7 +53,7 @@ AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
                       NSLog(@"%@", responseObject);
          
          
-         [self showRecentSongsFetched:<#(NSArray *)#>:responseObject];
+         [self showRecentSongsFetched:responseObject];
          
          [alert dismissViewControllerAnimated:YES completion:nil];
      }
@@ -71,28 +76,54 @@ AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     for (NSDictionary *dRecentSongs in fetched) {
         
         Songs *s = [[Songs alloc] init];
-        s.songId = dSongs[@"id"];
-        s.artist = dSongs[@"userId"];
-        s.title = dSongs[@"title"];
-        s.duration = dSongs[@"duration"];
-        s.thumbURL = dSongs[@"thumbUrl"];
+        s.songId = dRecentSongs[@"id"];
+        s.artist = dRecentSongs[@"artist"];
+        s.title = dRecentSongs[@"title"];
+        s.duration = dRecentSongs[@"duration"];
+        s.thumbURL = dRecentSongs[@"thumbUrl"];
+        s.recent = dRecentSongs[@"recent"];
         
-        
-        [recentSongs addObject:p];
+       
+        [recentSongs addObject:s];
     }
     
-    _recentsongs = [NSArray arrayWithArray:recentSongs];
+    
+    
+    _recentSongs = [NSArray arrayWithArray:recentSongs];
     
     [self.tableViewUltimas reloadData];
 }
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return _recentSongs.count;
 }
-*/
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"protoCell"];
+    
+    UILabel *labelTitle = [cell viewWithTag:1];
+    UILabel *labelArtist = [cell viewWithTag:2];
+    UILabel *labelDuration = [cell viewWithTag:3];
+    UILabel *labelImage = [cell viewWithTag:4];
+    UILabel *labelStar = [cell viewWithTag:5];
+    
+    Songs *s = _recentSongs[indexPath.row];
+    
+
+    
+    labelTitle.text = [NSString stringWithFormat:@"%@", s.artist];
+    //labelTitle.text = [NSString stringWithFormat:@"%@", s.artist];
+    //labelArtist.text = [NSString stringWithFormat:@"%@", s.title];
+    //labelDuration.text = [NSString stringWithFormat:@"%@", s.duration];
+    //[cell.imageView setImageWithURL:[NSURL URLWithString:s.thumbURL]];
+    //[cell.imageView setImage:[UIImage imageNamed:@"star"]];
+    
+    return cell;
+}
+
+
 
 @end
