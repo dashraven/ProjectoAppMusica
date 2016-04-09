@@ -80,7 +80,7 @@ AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
         s.artist = dRecentSongs[@"artist"];
         s.title = dRecentSongs[@"title"];
         s.duration = dRecentSongs[@"duration"];
-        s.thumbURL = dRecentSongs[@"thumbUrl"];
+        s.thumbURL = dRecentSongs[@"thumb_url"];
         s.recent = dRecentSongs[@"recent"];
         
        
@@ -107,8 +107,8 @@ AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     UILabel *labelTitle = [cell viewWithTag:1];
     UILabel *labelArtist = [cell viewWithTag:2];
     UILabel *labelDuration = [cell viewWithTag:3];
-    UILabel *labelImage = [cell viewWithTag:4];
-    UILabel *labelStar = [cell viewWithTag:5];
+    UILabel *labelImage = [cell.imageView viewWithTag:4];
+    UILabel *labelStar = [cell.imageView viewWithTag:5];
     
     Songs *s = _recentSongs[indexPath.row];
     
