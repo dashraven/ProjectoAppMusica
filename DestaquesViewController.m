@@ -12,12 +12,15 @@
 #import <AFNetworking/UIImageView+AFNetworking.h>
 
 @interface DestaquesViewController ()<UITableViewDataSource, UITableViewDelegate>
+
 @property (weak, nonatomic) IBOutlet UITableView *tableViewDestaques;
+
 @end
+
 @implementation DestaquesViewController
 
 {
-    NSArray<Songs *> *_highlightSongs;
+    NSArray<Songs *> *_topSongs;
 }
 
 
@@ -41,7 +44,7 @@
     
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     
-    [manager GET:@"http://reality6.com/musicservicejson.php?tipo=destaques"
+    [manager GET:@"http://reality6.com/musicservicejson.php?tipo=ultimas"
       parameters:nil
         progress:nil
          success:^(NSURLSessionDataTask *task, id responseObject) {
@@ -50,7 +53,7 @@
              NSLog(@"%@", responseObject);
              
              
-             [self showHighlightSongsFetched:responseObject];
+             [self showTopSongsFetched:responseObject];
              
              [alert dismissViewControllerAnimated:YES completion:nil];
          }
@@ -64,29 +67,29 @@
      ];
 }
 
-- (void)showHighlightSongsFetched:(NSArray *)fetched {
+- (void)showTopSongsFetched:(NSArray *)fetched {
     
     NSLog(@"%@", fetched);
     
-    NSMutableArray<Songs *> *highlightSongs = [[NSMutableArray alloc] init];
+    NSMutableArray<Songs *> *topSongs = [[NSMutableArray alloc] init];
     
-    for (NSDictionary *dHighlightSongs in fetched) {
+    for (NSDictionary *dTopSongs in fetched) {
         
         Songs *s = [[Songs alloc] init];
-        s.songId = dHighlightSongs[@"id"];
-        s.artist = dHighlightSongs[@"artist"];
-        s.title = dHighlightSongs[@"title"];
-        s.duration = dHighlightSongs[@"duration"];
-        s.thumbURL = dHighlightSongs[@"thumb_url"];
-        s.recent = dHighlightSongs[@"recent"];
+        s.songId = dTopSongs[@"id"];
+        s.artist = dTopSongs[@"artist"];
+        s.title = dTopSongs[@"title"];
+        s.duration = dTopSongs[@"duration"];
+        s.thumbURL = dTopSongs[@"thumb_url"];
+        s.recent = dTopSongs[@"recent"];
         
         
-        [highlightSongs addObject:s];
+        [topSongs addObject:s];
     }
     
     
     
-    _highlightSongs = [NSArray arrayWithArray:highlightSongs];
+    _topSongs = [NSArray arrayWithArray:topSongs];
     
     [self.tableViewDestaques reloadData];
 }
@@ -94,7 +97,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return _highlightSongs.count;
+    return _topSongs.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -107,7 +110,7 @@
     UILabel *labelImage = [cell.imageView viewWithTag:4];
     UILabel *labelStar = [cell.imageView viewWithTag:5];
     
-    Songs *s = _highlightSongs[indexPath.row];
+    Songs *s = _topSongs[indexPath.row];
     
     
     
