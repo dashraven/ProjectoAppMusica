@@ -50,7 +50,7 @@
              NSLog(@"%@", responseObject);
              
              
-             [self showHighlightSongsFetched:responseObject];
+             [self showTopSongsFetched:responseObject];
              
              [alert dismissViewControllerAnimated:YES completion:nil];
          }
@@ -64,7 +64,7 @@
      ];
 }
 
-- (void)showHighlightSongsFetched:(NSArray *)fetched {
+- (void)showTopSongsFetched:(NSArray *)fetched {
     
     NSLog(@"%@", fetched);
     

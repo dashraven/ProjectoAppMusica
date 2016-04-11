@@ -8,9 +8,11 @@
 
 #import "ViewController.h"
 #import "UltimasViewController.h"
+#import "DestaquesViewController.h"
+
 
 @interface ViewController ()
-@property (weak, nonatomic) IBOutlet UIButton *clickedUltimas;
+
 
 @end
 
@@ -28,12 +30,18 @@
     [self performSegueWithIdentifier:@"MainToUltimas" sender:nil];
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    
-UltimasViewController *uvc = segue.destinationViewController;
-uvc.latestSongs = sender;
-    
+
+- (IBAction)clickedDestaques:(id)sender {
+    [self performSegueWithIdentifier:@"MainToDestaques" sender:nil];
+}
+
+- (IBAction)clickedFavoritos:(id)sender {
+    [self performSegueWithIdentifier:@"MainToFavoritos" sender:nil];
+}
+
+
+- (IBAction)clickedProcurar:(id)sender {
+    [self performSegueWithIdentifier:@"MainToProcura" sender:nil];
 }
 
 
