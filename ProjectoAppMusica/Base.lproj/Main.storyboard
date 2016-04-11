@@ -709,6 +709,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="XVy-70-hYJ" id="thk-ur-JZC"/>
+                                    <outlet property="delegate" destination="XVy-70-hYJ" id="XSF-sX-uDn"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
