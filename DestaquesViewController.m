@@ -17,17 +17,17 @@
 @implementation DestaquesViewController
 
 {
-    NSArray<Songs *> *_highlightSongs;
+    NSArray<Songs *> *_topSongs;
 }
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self gethighlightSongs];
+    [self gettopSongs];
 }
 
-- (void) gethighlightSongs {
+- (void) gettopSongs {
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"A obter os destaques..." message:nil preferredStyle:UIAlertControllerStyleAlert ];
     
     UIAlertAction *alertButtonActionOK = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
@@ -68,25 +68,25 @@
     
     NSLog(@"%@", fetched);
     
-    NSMutableArray<Songs *> *highlightSongs = [[NSMutableArray alloc] init];
+    NSMutableArray<Songs *> *topSongs = [[NSMutableArray alloc] init];
     
-    for (NSDictionary *dHighlightSongs in fetched) {
+    for (NSDictionary *dTopSongs in fetched) {
         
         Songs *s = [[Songs alloc] init];
-        s.songId = dHighlightSongs[@"id"];
-        s.artist = dHighlightSongs[@"artist"];
-        s.title = dHighlightSongs[@"title"];
-        s.duration = dHighlightSongs[@"duration"];
-        s.thumbURL = dHighlightSongs[@"thumb_url"];
-        s.recent = dHighlightSongs[@"recent"];
+        s.songId = dTopSongs[@"id"];
+        s.artist = dTopSongs[@"artist"];
+        s.title = dTopSongs[@"title"];
+        s.duration = dTopSongs[@"duration"];
+        s.thumbURL = dTopSongs[@"thumb_url"];
+        s.recent = dTopSongs[@"recent"];
         
         
-        [highlightSongs addObject:s];
+        [topSongs addObject:s];
     }
     
     
     
-    _highlightSongs = [NSArray arrayWithArray:highlightSongs];
+    _topSongs = [NSArray arrayWithArray:topSongs];
     
     [self.tableViewDestaques reloadData];
 }
@@ -94,7 +94,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return _highlightSongs.count;
+    return _topSongs.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -107,7 +107,7 @@
     UILabel *labelImage = [cell.imageView viewWithTag:4];
     UILabel *labelStar = [cell.imageView viewWithTag:5];
     
-    Songs *s = _highlightSongs[indexPath.row];
+    Songs *s = _topSongs[indexPath.row];
     
     
     
