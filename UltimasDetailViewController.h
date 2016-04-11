@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class Songs;
+
 @interface UltimasDetailViewController : UIViewController
+
+@property(strong, nonatomic) Songs *recentsongs;
 
 @end

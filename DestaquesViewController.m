@@ -44,7 +44,7 @@
     
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     
-    [manager GET:@"http://reality6.com/musicservicejson.php?tipo=ultimas"
+    [manager GET:@"http://reality6.com/musicservicejson.php?tipo=destaques"
       parameters:nil
         progress:nil
          success:^(NSURLSessionDataTask *task, id responseObject) {

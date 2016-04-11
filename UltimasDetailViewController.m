@@ -7,8 +7,14 @@
 //
 
 #import "UltimasDetailViewController.h"
+#import <AFNetworking/UIImageView+AFNetworking.h>
 
 @interface UltimasDetailViewController ()
+@property (weak, nonatomic) IBOutlet UIImageView *imageViewPhoto;
+@property (weak, nonatomic) IBOutlet UILabel *labelTitle;
+@property (weak, nonatomic) IBOutlet UILabel *labelArtist;
+@property (weak, nonatomic) IBOutlet UILabel *labelDuration;
+@property (weak, nonatomic) IBOutlet UIButton *labelFavoritos;
 
 @end
 
@@ -16,12 +22,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    
+//    NSURL *photoURL = [NSURL URLWithString:s.photo.url];
+//    
+//    [self.imageViewPhoto sd_setImageWithURL:photoURL placeholderImage:placeholder];
+//    
+//    self.labelTitle.text = self.photo.title;
+    
+    
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
+
+- (IBAction)clickedFavoritos:(id)sender {
 }
 
 /*
