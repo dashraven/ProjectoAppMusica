@@ -12,6 +12,6 @@
 
 @interface UltimasDetailViewController : UIViewController
 
-@property(strong, nonatomic) Songs *recentsongs;
+@property(strong, nonatomic) Songs *latestsongs;
 
 @end

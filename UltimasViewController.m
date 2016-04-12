@@ -7,6 +7,7 @@
 //
 
 #import "UltimasViewController.h"
+#import "UltimasDetailViewController.h"
 #import <AFNetworking.h>
 #import "Songs.h"
 #import <AFNetworking/UIImageView+AFNetworking.h>
@@ -82,6 +83,8 @@ AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
         s.duration = dRecentSongs[@"duration"];
         s.thumbURL = dRecentSongs[@"thumb_url"];
         s.recent = dRecentSongs[@"recent"];
+        s.lyrics = dRecentSongs[@"lyrics"];
+        
         
        
         [recentSongs addObject:s];
@@ -124,6 +127,24 @@ AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     return cell;
 }
 
+#pragma mark - UITableViewDelegate Methods
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    Songs *s = _recentSongs[indexPath.row];
+    
+    [self performSegueWithIdentifier:@"UltimasToUltimasDetalhes" sender:s];
+    
+}
+
+#pragma mark - Navigation
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    
+    UltimasDetailViewController *udvc = segue.destinationViewController;
+    udvc.latestsongs = sender;
+    
+}
 
 @end

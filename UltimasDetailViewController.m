@@ -7,7 +7,7 @@
 //
 
 #import "UltimasDetailViewController.h"
-#import <AFNetworking/UIImageView+AFNetworking.h>
+#import <SDWebImage/UIImageView+WebCache.h>
 #import "Songs.h"
 
 @interface UltimasDetailViewController ()
@@ -15,7 +15,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *labelTitle;
 @property (weak, nonatomic) IBOutlet UILabel *labelArtist;
 @property (weak, nonatomic) IBOutlet UILabel *labelDuration;
-@property (weak, nonatomic) IBOutlet UIButton *labelFavoritos;
+@property (weak, nonatomic) IBOutlet UITextView *textLyrics;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *switchFavoritos;
+
 
 @end
 
@@ -24,32 +26,27 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-//    
-//    NSURL *thumbURL = [NSURL URLWithString:self.thumbURL];
-//    
-//   [self.albumPhoto setImageWithURL:[NSURL URLWithString:song.thumbnailUrl]];
-//    
-//    self.labelTitle.text = self.photo.title;
-//    self.labelTitle.text = self.photo.title;
-//    self.labelTitle.text = self.photo.title;
-//    self.labelTitle.text = self.photo.title;
+   
+    NSURL *thumbURL = [NSURL URLWithString:self.latestsongs.thumbURL];
+   
+    [self.albumPhoto sd_setImageWithURL:thumbURL];
     
+
+    
+    self.labelTitle.text = self.latestsongs.title;
+    self.labelArtist.text = self.latestsongs.artist;
+    self.labelDuration.text = self.latestsongs.duration;
+    self.labelTitle.text = self.latestsongs.title;
+    self.textLyrics.text = self.latestsongs.lyrics;
     
 }
 
 
 
 //- (IBAction)clickedFavoritos:(id)sender {
+//    
 //}
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

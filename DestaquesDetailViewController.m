@@ -7,8 +7,17 @@
 //
 
 #import "DestaquesDetailViewController.h"
+#import <SDWebImage/UIImageView+WebCache.h>
+#import "Songs.h"
 
 @interface DestaquesDetailViewController ()
+@property (weak, nonatomic) IBOutlet UIImageView *albumPhoto;
+@property (weak, nonatomic) IBOutlet UILabel *labelTitle;
+@property (weak, nonatomic) IBOutlet UILabel *labelArtist;
+@property (weak, nonatomic) IBOutlet UILabel *labelDuration;
+@property (weak, nonatomic) IBOutlet UITextView *textLyrics;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *switchFavoritos;
+
 
 @end
 
@@ -16,22 +25,26 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    
+    NSURL *thumbURL = [NSURL URLWithString:self.highlightsongs.thumbURL];
+    
+    [self.albumPhoto sd_setImageWithURL:thumbURL];
+    
+    
+    
+    self.labelTitle.text = self.highlightsongs.title;
+    self.labelArtist.text = self.highlightsongs.artist;
+    self.labelDuration.text = self.highlightsongs.duration;
+    self.labelTitle.text = self.highlightsongs.title;
+    self.textLyrics.text = self.highlightsongs.lyrics;
+    
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+//- (IBAction)clickedFavoritos:(id)sender {
+//
+//}
 
 @end

@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+@class Songs;
 
 @interface DestaquesDetailViewController : UIViewController
+
+@property(strong, nonatomic) Songs *highlightsongs;
 
 @end

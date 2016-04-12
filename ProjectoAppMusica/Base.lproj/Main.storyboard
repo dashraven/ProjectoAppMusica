@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="uRX-9d-MxK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="uRX-9d-MxK">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -228,7 +228,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableViewUltimas" destination="1h1-T2-2F6" id="Btg-UP-V96"/>
-                        <segue destination="ejj-8F-04P" kind="show" identifier="LastTableToDetail" id="gpS-FI-dsq"/>
+                        <segue destination="ejj-8F-04P" kind="show" identifier="UltimasToUltimasDetalhes" id="gpS-FI-dsq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="THF-Oz-dHx" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -294,7 +294,7 @@
                                                     <constraint firstAttribute="width" constant="144" id="cHy-3b-SQ6"/>
                                                 </constraints>
                                             </imageView>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="4" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="A8D-wA-eO4">
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="4" contentMode="top" bounces="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="A8D-wA-eO4">
                                                 <rect key="frame" x="160" y="325" width="240" height="159"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
@@ -346,14 +346,15 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Últimas - Detalhe" id="PdZ-fq-qFM">
                         <barButtonItem key="backBarButtonItem" title="Últimas" id="pMt-8I-Xug"/>
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="RKe-bQ-k1b">
-                            <switch key="customView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="r33-U5-d8n">
-                                <rect key="frame" x="531" y="6" width="51" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </switch>
-                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="albumPhoto" destination="vi9-tj-uYC" id="4Pt-lA-yx1"/>
+                        <outlet property="labelArtist" destination="ghr-Ou-tup" id="T4u-bT-gB8"/>
+                        <outlet property="labelDuration" destination="crO-eW-hio" id="lj9-Hr-LkD"/>
+                        <outlet property="labelTitle" destination="OQ6-wW-jXT" id="pvA-Jf-oJ7"/>
+                        <outlet property="textLyrics" destination="A8D-wA-eO4" id="052-Nq-x9Y"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QZL-jZ-Flc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -467,13 +468,14 @@
                     </view>
                     <navigationItem key="navigationItem" title="Destaques - Detalhe" id="He1-Ee-qcT">
                         <barButtonItem key="backBarButtonItem" title="Destaques" id="33n-lR-T9t"/>
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="lLu-Ut-J3y">
-                            <switch key="customView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="e3g-l5-dBe">
-                                <rect key="frame" x="531" y="6" width="51" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </switch>
-                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="albumPhoto" destination="9DE-Wd-x6o" id="0lc-AX-0Sg"/>
+                        <outlet property="labelArtist" destination="37v-Ad-OX5" id="p3r-iq-Ipc"/>
+                        <outlet property="labelDuration" destination="cpM-CB-JoP" id="NO4-Yl-2Xx"/>
+                        <outlet property="labelTitle" destination="rUt-1Z-Myn" id="wsV-M9-oy9"/>
+                        <outlet property="textLyrics" destination="4aV-qT-KfB" id="5sM-V8-etY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MP3-dl-dIa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -581,12 +583,6 @@
                     </view>
                     <navigationItem key="navigationItem" title="Favoritos - Detalhes" id="XBs-fD-XGU">
                         <barButtonItem key="backBarButtonItem" title="Favoritos" id="1Ax-D8-eFE"/>
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="V4F-GW-IoU">
-                            <switch key="customView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="aAP-3s-dnw">
-                                <rect key="frame" x="531" y="6" width="51" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </switch>
-                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MgD-mX-yhD" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -699,14 +695,7 @@
                             <constraint firstItem="SBa-5L-1B0" firstAttribute="top" secondItem="PuE-wp-l2y" secondAttribute="bottom" id="UHy-LK-5f7"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Procura - Detalhes" id="Xfq-Aw-4PD">
-                        <barButtonItem key="rightBarButtonItem" title="FavThis" style="plain" id="il3-w4-AhW">
-                            <switch key="customView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="H0L-Ey-cPZ">
-                                <rect key="frame" x="531" y="6" width="51" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </switch>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Procura - Detalhes" id="Xfq-Aw-4PD"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qy5-b4-GUx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -832,7 +821,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableViewDestaques" destination="he3-mb-Hpw" id="1D2-Jq-eGM"/>
-                        <segue destination="hGc-Gj-gz0" kind="show" identifier="TopTableToDetail" id="lQc-Gn-SoS"/>
+                        <segue destination="hGc-Gj-gz0" kind="show" identifier="DestaquesToDestaquesDetalhes" id="lQc-Gn-SoS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VVR-Eh-d4d" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -975,7 +964,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField clipsSubviews="YES" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="RKU-JU-qrr">
+                            <textField clipsSubviews="YES" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" clearsOnBeginEditing="YES" adjustsFontSizeToFit="NO" minimumFontSize="15" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="RKU-JU-qrr">
                                 <rect key="frame" x="150" y="216" width="250" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="9zw-hY-zTY"/>

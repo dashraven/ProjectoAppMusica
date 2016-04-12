@@ -7,6 +7,7 @@
 //
 
 #import "DestaquesViewController.h"
+#import "DestaquesDetailViewController.h"
 #import <AFNetworking.h>
 #import "Songs.h"
 #import <AFNetworking/UIImageView+AFNetworking.h>
@@ -82,6 +83,7 @@
         s.duration = dTopSongs[@"duration"];
         s.thumbURL = dTopSongs[@"thumb_url"];
         s.recent = dTopSongs[@"recent"];
+        s.lyrics = dTopSongs[@"lyrics"];
         
         
         [topSongs addObject:s];
@@ -124,5 +126,24 @@
     return cell;
 }
 
+#pragma mark - UITableViewDelegate Methods
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    Songs *s = _topSongs[indexPath.row];
+    
+    [self performSegueWithIdentifier:@"DestaquesToDestaquesDetalhes" sender:s];
+    
+}
+
+#pragma mark - Navigation
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    
+    DestaquesDetailViewController *ddvc = segue.destinationViewController;
+    ddvc.highlightsongs = sender;
+    
+}
 
 @end
