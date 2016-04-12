@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+@class Songs;
 @interface ProcurarResultadosViewController : UIViewController
+@property (strong, nonatomic) Songs *allSongs;
+
 
 @end

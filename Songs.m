@@ -7,6 +7,7 @@
 //
 
 #import "Songs.h"
+#import "AppDelegate.h"
 
 @implementation Songs
 
@@ -30,6 +31,17 @@
     return [[Songs alloc] initWithSongId:songId artist:artist title:title duration:duration thumbURL:thumbURL lyrics:lyrics highlight:highlight recent:recent];
     
 }
+
++ (instancetype)newFavoriteSong
+{
+    AppDelegate *delegate = [UIApplication sharedApplication].delegate;
+    NSManagedObjectContext *context = delegate.managedObjectContext;
+    
+    Songs *f = [NSEntityDescription insertNewObjectForEntityForName:@"Songs" inManagedObjectContext:context];
+    
+    return f;
+}
+
 
 
 

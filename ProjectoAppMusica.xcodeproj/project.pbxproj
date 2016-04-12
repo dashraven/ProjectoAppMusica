@@ -25,6 +25,7 @@
 		04F74EE41CB5916B003C9AC2 /* ProcurarResultadosDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F74EE31CB5916B003C9AC2 /* ProcurarResultadosDetailViewController.m */; };
 		04F74EE81CB592DE003C9AC2 /* Songs.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F74EE71CB592DE003C9AC2 /* Songs.m */; };
 		B22D624192CCCBFC716E9358 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 02830F07F983C04CA31EB76E /* libPods.a */; };
+		C8C2B09E1CBDA6C8000E862D /* Songs+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = C8C2B09D1CBDA6C8000E862D /* Songs+CoreDataProperties.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +62,8 @@
 		04F74EE61CB592DE003C9AC2 /* Songs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Songs.h; sourceTree = "<group>"; };
 		04F74EE71CB592DE003C9AC2 /* Songs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Songs.m; sourceTree = "<group>"; };
 		B17FE753F545E09940320FB4 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		C8C2B09C1CBDA6C8000E862D /* Songs+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Songs+CoreDataProperties.h"; sourceTree = "<group>"; };
+		C8C2B09D1CBDA6C8000E862D /* Songs+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Songs+CoreDataProperties.m"; sourceTree = "<group>"; };
 		F7FFA28ED90F8A725DCF71CD /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -152,6 +155,8 @@
 			children = (
 				04F74EE61CB592DE003C9AC2 /* Songs.h */,
 				04F74EE71CB592DE003C9AC2 /* Songs.m */,
+				C8C2B09C1CBDA6C8000E862D /* Songs+CoreDataProperties.h */,
+				C8C2B09D1CBDA6C8000E862D /* Songs+CoreDataProperties.m */,
 			);
 			name = ModelClasses;
 			sourceTree = "<group>";
@@ -294,6 +299,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C8C2B09E1CBDA6C8000E862D /* Songs+CoreDataProperties.m in Sources */,
 				04F74EE41CB5916B003C9AC2 /* ProcurarResultadosDetailViewController.m in Sources */,
 				04F74ED81CB5912D003C9AC2 /* FavoritosViewController.m in Sources */,
 				04F74ED21CB59101003C9AC2 /* DestaquesViewController.m in Sources */,

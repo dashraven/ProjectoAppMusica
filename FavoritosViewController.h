@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+@class Songs;
 @interface FavoritosViewController : UIViewController
+
+@property (strong, nonatomic) Songs *favoriteSongs;
 
 @end
