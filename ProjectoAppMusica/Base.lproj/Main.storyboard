@@ -346,6 +346,12 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Últimas - Detalhe" id="PdZ-fq-qFM">
                         <barButtonItem key="backBarButtonItem" title="Últimas" id="pMt-8I-Xug"/>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="RKe-bQ-k1b">
+                            <switch key="customView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="r33-U5-d8n">
+                                <rect key="frame" x="531" y="6" width="51" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </switch>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
@@ -461,6 +467,12 @@
                     </view>
                     <navigationItem key="navigationItem" title="Destaques - Detalhe" id="He1-Ee-qcT">
                         <barButtonItem key="backBarButtonItem" title="Destaques" id="33n-lR-T9t"/>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="lLu-Ut-J3y">
+                            <switch key="customView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="e3g-l5-dBe">
+                                <rect key="frame" x="531" y="6" width="51" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </switch>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MP3-dl-dIa" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -569,13 +581,19 @@
                     </view>
                     <navigationItem key="navigationItem" title="Favoritos - Detalhes" id="XBs-fD-XGU">
                         <barButtonItem key="backBarButtonItem" title="Favoritos" id="1Ax-D8-eFE"/>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="V4F-GW-IoU">
+                            <switch key="customView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="aAP-3s-dnw">
+                                <rect key="frame" x="531" y="6" width="51" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </switch>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MgD-mX-yhD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="95" y="-866"/>
         </scene>
-        <!--Procurar Resultados Detail View Controller-->
+        <!--Procura - Detalhes-->
         <scene sceneID="P5D-gb-rce">
             <objects>
                 <viewController id="iXQ-De-Us8" customClass="ProcurarResultadosDetailViewController" sceneMemberID="viewController">
@@ -681,7 +699,14 @@
                             <constraint firstItem="SBa-5L-1B0" firstAttribute="top" secondItem="PuE-wp-l2y" secondAttribute="bottom" id="UHy-LK-5f7"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Xfq-Aw-4PD"/>
+                    <navigationItem key="navigationItem" title="Procura - Detalhes" id="Xfq-Aw-4PD">
+                        <barButtonItem key="rightBarButtonItem" title="FavThis" style="plain" id="il3-w4-AhW">
+                            <switch key="customView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="H0L-Ey-cPZ">
+                                <rect key="frame" x="531" y="6" width="51" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </switch>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qy5-b4-GUx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
