@@ -132,12 +132,12 @@
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="constraints">
-                                                    <exclude reference="2pv-8k-hzD"/>
-                                                    <exclude reference="RuI-FK-VP6"/>
-                                                    <exclude reference="dsp-7q-Xb6"/>
                                                     <exclude reference="315-a6-EWs"/>
                                                     <exclude reference="wPW-ZT-4es"/>
                                                     <exclude reference="xu7-SC-6mg"/>
+                                                    <exclude reference="2pv-8k-hzD"/>
+                                                    <exclude reference="RuI-FK-VP6"/>
+                                                    <exclude reference="dsp-7q-Xb6"/>
                                                     <exclude reference="00I-qR-jw9"/>
                                                     <exclude reference="0oK-dn-VTQ"/>
                                                     <exclude reference="4n3-bo-lrJ"/>
@@ -1160,12 +1160,12 @@
                                                     <nil key="highlightedColor"/>
                                                     <variation key="default">
                                                         <mask key="constraints">
-                                                            <exclude reference="FRz-y2-oD6"/>
                                                             <exclude reference="0Cp-Lz-6nu"/>
                                                             <exclude reference="8Jd-vX-AT4"/>
+                                                            <exclude reference="FRz-y2-oD6"/>
                                                             <exclude reference="oLo-Qx-2Uc"/>
-                                                            <exclude reference="zS6-8X-Fnd"/>
                                                             <exclude reference="qhd-QC-Jd0"/>
+                                                            <exclude reference="zS6-8X-Fnd"/>
                                                         </mask>
                                                     </variation>
                                                 </label>

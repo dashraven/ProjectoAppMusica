@@ -7,6 +7,7 @@
 //
 
 #import "UltimasDetailViewController.h"
+#import "Songs.h"
 #import <AFNetworking/UIImageView+AFNetworking.h>
 
 @interface UltimasDetailViewController ()
@@ -23,12 +24,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
-//    NSURL *photoURL = [NSURL URLWithString:s.photo.url];
-//    
-//    [self.imageViewPhoto sd_setImageWithURL:photoURL placeholderImage:placeholder];
-//    
-//    self.labelTitle.text = self.photo.title;
+
+
+    NSURL *imageViewPhoto = [NSURL URLWithString:self.recentsongs.thumbURL];
+
+
+ 
     
     
 }
