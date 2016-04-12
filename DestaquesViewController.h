@@ -10,7 +10,7 @@
 @class Songs;
 
 @interface DestaquesViewController : UIViewController
-@property (strong, nonatomic) Songs *highlightSongs;
+@property (strong, nonatomic) Songs *highlightedSongs;
 
 
 @end

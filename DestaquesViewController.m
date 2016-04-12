@@ -27,10 +27,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self gethighlightSongs];
+    [self gettopSongs];
 }
 
-- (void) gethighlightSongs {
+- (void) gettopSongs {
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"A obter os destaques..." message:nil preferredStyle:UIAlertControllerStyleAlert ];
     
     UIAlertAction *alertButtonActionOK = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {

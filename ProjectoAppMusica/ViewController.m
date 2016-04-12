@@ -11,7 +11,7 @@
 #import "DestaquesViewController.h"
 
 @interface ViewController ()
-@property (weak, nonatomic) IBOutlet UIButton *clickedUltimas;
+
 
 @end
 
