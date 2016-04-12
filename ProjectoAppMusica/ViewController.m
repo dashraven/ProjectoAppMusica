@@ -33,23 +33,14 @@
     [self performSegueWithIdentifier:@"MainToTopTable" sender:nil];
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    
-    
-    if([[segue identifier] isEqualToString:@"MainToUltimas"]) {
-        
-        //get the controller that we are going to segue to
-        UltimasViewController *uvc = segue.destinationViewController;
-        uvc.latestSongs = sender;
 
+- (IBAction)clickedFavoritos:(id)sender {
+        [self performSegueWithIdentifier:@"MainToFavoritos" sender:nil];
     }
-    
-    if([[segue identifier] isEqualToString:@"MainToTopTable"]) {
-        
-        DestaquesViewController *dvc = segue.destinationViewController;
-        dvc.highlightSongs = sender;
-    }
+
+
+- (IBAction)clickedProcurar:(id)sender {
+       [self performSegueWithIdentifier:@"MainToProcura" sender:nil];
 }
 
 

@@ -8,9 +8,10 @@
 
 #import "UltimasDetailViewController.h"
 #import <AFNetworking/UIImageView+AFNetworking.h>
+#import "Songs.h"
 
 @interface UltimasDetailViewController ()
-@property (weak, nonatomic) IBOutlet UIImageView *imageViewPhoto;
+@property (weak, nonatomic) IBOutlet UIImageView *albumPhoto;
 @property (weak, nonatomic) IBOutlet UILabel *labelTitle;
 @property (weak, nonatomic) IBOutlet UILabel *labelArtist;
 @property (weak, nonatomic) IBOutlet UILabel *labelDuration;
@@ -23,11 +24,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
-//    NSURL *photoURL = [NSURL URLWithString:s.photo.url];
 //    
-//    [self.imageViewPhoto sd_setImageWithURL:photoURL placeholderImage:placeholder];
+//    NSURL *thumbURL = [NSURL URLWithString:self.thumbURL];
 //    
+//   [self.albumPhoto setImageWithURL:[NSURL URLWithString:song.thumbnailUrl]];
+//    
+//    self.labelTitle.text = self.photo.title;
+//    self.labelTitle.text = self.photo.title;
+//    self.labelTitle.text = self.photo.title;
 //    self.labelTitle.text = self.photo.title;
     
     
@@ -35,8 +39,8 @@
 
 
 
-- (IBAction)clickedFavoritos:(id)sender {
-}
+//- (IBAction)clickedFavoritos:(id)sender {
+//}
 
 /*
 #pragma mark - Navigation
