@@ -10,7 +10,7 @@
 
 @class Songs;
 @interface ProcurarResultadosViewController : UIViewController
-@property (strong, nonatomic) Songs *allSongs;
+@property (strong, nonatomic) Songs *allfoundSongs;
 
 
 @end
