@@ -12,6 +12,7 @@
 
 @interface UltimasDetailViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *albumPhoto;
+@property (weak, nonatomic) IBOutlet UIImageView *star;
 @property (weak, nonatomic) IBOutlet UILabel *labelTitle;
 @property (weak, nonatomic) IBOutlet UILabel *labelArtist;
 @property (weak, nonatomic) IBOutlet UILabel *labelDuration;
@@ -28,8 +29,8 @@
     
    
     NSURL *thumbURL = [NSURL URLWithString:self.latestsongs.thumbURL];
-   
     [self.albumPhoto sd_setImageWithURL:thumbURL];
+    [self.star setImage:[UIImage imageNamed:@"star"]];
     
 
     

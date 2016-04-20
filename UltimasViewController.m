@@ -111,8 +111,8 @@ AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     UILabel *labelTitle = [cell viewWithTag:1];
     UILabel *labelArtist = [cell viewWithTag:2];
     UILabel *labelDuration = [cell viewWithTag:3];
-    UIImageView *Image = [cell viewWithTag:4];
-    UIImageView *Star = [cell viewWithTag:5];
+    UIImageView *albumPhoto = [cell viewWithTag:4];
+    UIImageView *star = [cell viewWithTag:5];
     
     Songs *s = _recentSongs[indexPath.row];
     
@@ -122,8 +122,8 @@ AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     labelTitle.text = [NSString stringWithFormat:@"%@", s.artist];
     labelArtist.text = [NSString stringWithFormat:@"%@", s.title];
     labelDuration.text = [NSString stringWithFormat:@"%@", s.duration];
-    [Image sd_setImageWithURL:[NSURL URLWithString:s.thumbURL]];
-    [Star setImage:[UIImage imageNamed:@"star"]];
+    [albumPhoto sd_setImageWithURL:[NSURL URLWithString:s.thumbURL]];
+    [star setImage:[UIImage imageNamed:@"star"]];
     
     return cell;
 }

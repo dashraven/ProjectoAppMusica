@@ -301,6 +301,20 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
+                                            <imageView userInteractionEnabled="NO" tag="5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Gi-ho-Dp8">
+                                                <rect key="frame" x="321" y="121" width="25" height="23"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="25" id="5dd-13-y2h"/>
+                                                    <constraint firstAttribute="width" constant="25" id="BxQ-C8-0LW"/>
+                                                    <constraint firstAttribute="height" constant="25" id="FZ5-ym-pK0"/>
+                                                </constraints>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="5dd-13-y2h"/>
+                                                        <exclude reference="FZ5-ym-pK0"/>
+                                                    </mask>
+                                                </variation>
+                                            </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -353,6 +367,7 @@
                         <outlet property="labelArtist" destination="ghr-Ou-tup" id="T4u-bT-gB8"/>
                         <outlet property="labelDuration" destination="crO-eW-hio" id="lj9-Hr-LkD"/>
                         <outlet property="labelTitle" destination="OQ6-wW-jXT" id="pvA-Jf-oJ7"/>
+                        <outlet property="star" destination="1Gi-ho-Dp8" id="8Zu-gY-hss"/>
                         <outlet property="textLyrics" destination="A8D-wA-eO4" id="052-Nq-x9Y"/>
                     </connections>
                 </viewController>
@@ -428,6 +443,12 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
+                                            <imageView userInteractionEnabled="NO" tag="5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EGX-Gs-65B">
+                                                <rect key="frame" x="320" y="119" width="25" height="25"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="25" id="Iq8-ax-8ev"/>
+                                                </constraints>
+                                            </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -474,6 +495,7 @@
                         <outlet property="labelArtist" destination="37v-Ad-OX5" id="p3r-iq-Ipc"/>
                         <outlet property="labelDuration" destination="cpM-CB-JoP" id="NO4-Yl-2Xx"/>
                         <outlet property="labelTitle" destination="rUt-1Z-Myn" id="wsV-M9-oy9"/>
+                        <outlet property="star" destination="EGX-Gs-65B" id="HDJ-zC-iCL"/>
                         <outlet property="textLyrics" destination="4aV-qT-KfB" id="5sM-V8-etY"/>
                     </connections>
                 </viewController>
@@ -657,6 +679,12 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
+                                            <imageView userInteractionEnabled="NO" tag="5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vQD-Ay-97b">
+                                                <rect key="frame" x="321" y="120" width="25" height="25"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="25" id="fnH-xf-IiL"/>
+                                                </constraints>
+                                            </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -696,6 +724,14 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Procura - Detalhes" id="Xfq-Aw-4PD"/>
+                    <connections>
+                        <outlet property="albumPhoto" destination="3r5-xR-Z3p" id="5e7-er-aWN"/>
+                        <outlet property="labelArtist" destination="OO0-4Y-8bG" id="9fI-TL-vSY"/>
+                        <outlet property="labelDuration" destination="Jzp-6h-b4Q" id="in3-ch-IJD"/>
+                        <outlet property="labelTitle" destination="dOE-dd-cJb" id="DVx-l9-qSq"/>
+                        <outlet property="star" destination="vQD-Ay-97b" id="kdM-9g-V6a"/>
+                        <outlet property="textLyrics" destination="9l7-9u-JEg" id="rBf-Y9-0eU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qy5-b4-GUx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1140,6 +1176,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Resultados da procura" id="HM8-D8-RqG"/>
                     <connections>
+                        <outlet property="tableViewProcura" destination="mnN-Cj-taC" id="DgA-CB-vQ6"/>
                         <segue destination="iXQ-De-Us8" kind="show" identifier="SearchTabletToDetail" id="gPB-5e-R8D"/>
                     </connections>
                 </viewController>
