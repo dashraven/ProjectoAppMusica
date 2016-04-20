@@ -32,15 +32,15 @@
     
 }
 
-+ (instancetype)newFavoriteSong
-{
-    AppDelegate *delegate = [UIApplication sharedApplication].delegate;
-    NSManagedObjectContext *context = delegate.managedObjectContext;
-    
-    Songs *f = [NSEntityDescription insertNewObjectForEntityForName:@"Songs" inManagedObjectContext:context];
-    
-    return f;
-}
+//+ (instancetype)newFavoriteSong
+//{
+//    AppDelegate *delegate = [UIApplication sharedApplication].delegate;
+//    NSManagedObjectContext *context = delegate.managedObjectContext;
+//    
+//    Songs *f = [NSEntityDescription insertNewObjectForEntityForName:@"Songs" inManagedObjectContext:context];
+//    
+//    return f;
+//}
 
 
 

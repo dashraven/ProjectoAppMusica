@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Songs.h"
 
 @interface ProcurarViewController : UIViewController
 

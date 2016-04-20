@@ -11,6 +11,7 @@
 #import <AFNetworking.h>
 #import "Songs.h"
 #import <AFNetworking/UIImageView+AFNetworking.h>
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @interface DestaquesViewController ()<UITableViewDataSource, UITableViewDelegate>
 
@@ -109,8 +110,8 @@
     UILabel *labelTitle = [cell viewWithTag:1];
     UILabel *labelArtist = [cell viewWithTag:2];
     UILabel *labelDuration = [cell viewWithTag:3];
-    UILabel *labelImage = [cell.imageView viewWithTag:4];
-    UILabel *labelStar = [cell.imageView viewWithTag:5];
+    UIImageView *Image = [cell viewWithTag:4];
+    UIImageView *Star = [cell viewWithTag:5];
     
     Songs *s = _topSongs[indexPath.row];
     
@@ -120,8 +121,9 @@
     labelTitle.text = [NSString stringWithFormat:@"%@", s.artist];
     labelArtist.text = [NSString stringWithFormat:@"%@", s.title];
     labelDuration.text = [NSString stringWithFormat:@"%@", s.duration];
-    [cell.imageView setImageWithURL:[NSURL URLWithString:s.thumbURL]];
-    [cell.imageView setImage:[UIImage imageNamed:@"star"]];
+    [Image sd_setImageWithURL:[NSURL URLWithString:s.thumbURL]];
+    [Star setImage:[UIImage imageNamed:@"star"]];
+    
     
     return cell;
 }

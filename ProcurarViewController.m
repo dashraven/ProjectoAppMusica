@@ -8,9 +8,10 @@
 
 #import "ProcurarViewController.h"
 #import "ProcurarResultadosViewController.h"
-#import <AFNetworking.h>
+#import "ProcurarResultadosViewController.m"
 #import "Songs.h"
 #import <AFNetworking/UIImageView+AFNetworking.h>
+
 
 @interface ProcurarViewController ()
 
@@ -22,8 +23,8 @@
 @implementation ProcurarViewController
 
 {
-    NSArray<Songs *> *_allSongTitles;
-    NSArray<Songs *> *_allSongArtists;
+    NSArray<Songs *> *_allSongSearch;
+    
 }
 
 - (void)viewDidLoad {
@@ -31,31 +32,32 @@
    
 }
 
+
 - (void)showAllSongTitlesFetched:(NSArray *)fetched {
     
     NSLog(@"%@", fetched);
     
-    NSMutableArray<Songs *> *allSongTitles = [[NSMutableArray alloc] init];
+    NSMutableArray<Songs *> *allSongSearch = [[NSMutableArray alloc] init];
     
-    for (NSDictionary *dAllSongTitles in fetched) {
+    for (NSDictionary *dAllSongSearch in fetched) {
         
         Songs *s = [[Songs alloc] init];
-        s.songId = dAllSongTitles[@"id"];
-        s.artist = dAllSongTitles[@"artist"];
-        s.title = dAllSongTitles[@"title"];
-        s.duration = dAllSongTitles[@"duration"];
-        s.thumbURL = dAllSongTitles[@"thumb_url"];
-        s.recent = dAllSongTitles[@"recent"];
-        s.lyrics = dAllSongTitles[@"lyrics"];
+        s.songId = dAllSongSearch[@"id"];
+        s.artist = dAllSongSearch[@"artist"];
+        s.title = dAllSongSearch[@"title"];
+        s.duration = dAllSongSearch[@"duration"];
+        s.thumbURL = dAllSongSearch[@"thumb_url"];
+        s.recent = dAllSongSearch[@"recent"];
+        s.lyrics = dAllSongSearch[@"lyrics"];
         
         
         
-        [allSongTitles addObject:s];
+        [allSongSearch addObject:s];
     }
     
     
     
-    _allSongTitles = [NSArray arrayWithArray:allSongTitles];
+    _allSongSearch = [NSArray arrayWithArray:allSongSearch];
     
 }
 
@@ -64,27 +66,27 @@
     
     NSLog(@"%@", fetched);
     
-    NSMutableArray<Songs *> *allSongArtists = [[NSMutableArray alloc] init];
+    NSMutableArray<Songs *> *allSongSearch = [[NSMutableArray alloc] init];
     
-    for (NSDictionary *dAllSongArtists in fetched) {
+    for (NSDictionary *dAllSongSearch in fetched) {
         
         Songs *s = [[Songs alloc] init];
-        s.songId = dAllSongArtists[@"id"];
-        s.artist = dAllSongArtists[@"artist"];
-        s.title = dAllSongArtists[@"title"];
-        s.duration = dAllSongArtists[@"duration"];
-        s.thumbURL = dAllSongArtists[@"thumb_url"];
-        s.recent = dAllSongArtists[@"recent"];
-        s.lyrics = dAllSongArtists[@"lyrics"];
+        s.songId = dAllSongSearch[@"id"];
+        s.artist = dAllSongSearch[@"artist"];
+        s.title = dAllSongSearch[@"title"];
+        s.duration = dAllSongSearch[@"duration"];
+        s.thumbURL = dAllSongSearch[@"thumb_url"];
+        s.recent = dAllSongSearch[@"recent"];
+        s.lyrics = dAllSongSearch[@"lyrics"];
         
         
         
-        [allSongArtists addObject:s];
+        [allSongSearch addObject:s];
     }
     
     
     
-    _allSongArtists = [NSArray arrayWithArray:allSongArtists];
+    _allSongSearch = [NSArray arrayWithArray:allSongSearch];
     
 }
 
@@ -174,15 +176,7 @@
 
 - (IBAction)clickedBusca:(id)sender {
 
-    NSInteger selectedSegment = self.segmentSearch.selectedSegmentIndex;
-    
-    if (selectedSegment == 0) {
-        
-    [self performSegueWithIdentifier:@"ProcuraToResultados" sender:_allSongTitles];
-        
-    } else {
-        
-    }[self performSegueWithIdentifier:@"ProcuraToResultados" sender:_allSongArtists];
+    [self performSegueWithIdentifier:@"ProcuraToResultados" sender:_allSongSearch];
     
 }
 
