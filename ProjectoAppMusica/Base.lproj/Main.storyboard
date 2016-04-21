@@ -1058,6 +1058,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="segmentSearch" destination="RgO-Pb-s15" id="oBa-Bf-Ts7"/>
+                        <outlet property="textProcurar" destination="RKU-JU-qrr" id="kX3-Qa-jac"/>
                         <segue destination="fDY-BX-xX2" kind="show" identifier="ProcuraToResultados" id="Vae-sH-zla"/>
                     </connections>
                 </viewController>

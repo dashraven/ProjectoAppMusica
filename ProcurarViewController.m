@@ -8,13 +8,12 @@
 
 #import "ProcurarViewController.h"
 #import "ProcurarResultadosViewController.h"
-#import "ProcurarResultadosViewController.m"
 #import "Songs.h"
 #import <AFNetworking/UIImageView+AFNetworking.h>
+#import <SDWebImage/UIImageView+WebCache.h>
 
 
 @interface ProcurarViewController ()
-
 @property (weak, nonatomic) IBOutlet UITextField *textProcurar;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentSearch;
 
