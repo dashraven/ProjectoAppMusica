@@ -33,14 +33,12 @@
 
 
 - (IBAction)clickedBusca:(id)sender {
-    
-    UISegmentedControl *segmentedControl = (UISegmentedControl *) sender;
-    NSInteger selectedSegment = segmentedControl.selectedSegmentIndex;
+
     
     NSMutableString *_json = [[NSMutableString alloc] initWithString:@"http://reality6.com/musicservicejson.php?tipo="];
     
    
-    if (selectedSegment == 0) {
+    if (self.segmentSearch.selectedSegmentIndex == 0) {
         [_json appendString:@"buscaartista&nome="];
     } else {
         [_json appendString:@"buscacancao&nome="];

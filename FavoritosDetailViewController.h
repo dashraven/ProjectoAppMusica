@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FavoriteSongs.h"
+
 
 @interface FavoritosDetailViewController : UIViewController
-@property (strong, nonatomic) Songs *myFavoriteSongs;
+@property (strong, nonatomic) FavoriteSongs *myFavoriteSongs;
 
 @end
