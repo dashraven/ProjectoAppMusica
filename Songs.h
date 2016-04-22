@@ -7,10 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <CoreData/CoreData.h>
+
 
 @interface Songs : NSObject
-
 @property (strong, nonatomic) NSString *artist;
 @property (strong, nonatomic) NSString *title;
 @property (strong, nonatomic) NSString *duration;

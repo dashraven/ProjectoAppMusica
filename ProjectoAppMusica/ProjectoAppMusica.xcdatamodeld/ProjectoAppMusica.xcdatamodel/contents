@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10171" systemVersion="15E65" minimumToolsVersion="Automatic">
-    <entity name="Songs" representedClassName="Songs" syncable="YES">
-        <attribute name="albumphoto" optional="YES" attributeType="String" syncable="YES"/>
+    <entity name="FavoriteSongs" representedClassName="FavoriteSongs" syncable="YES">
+        <attribute name="albumPhoto" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="artist" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="duration" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="favorites" optional="YES" attributeType="Boolean" syncable="YES"/>
-        <attribute name="lyricts" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="favorite" optional="YES" syncable="YES"/>
+        <attribute name="lyrics" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="thumbURL" optional="YES" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Songs" positionX="-63" positionY="-18" width="128" height="30"/>
+        <element name="FavoriteSongs" positionX="-63" positionY="18" width="128" height="150"/>
     </elements>
 </model>

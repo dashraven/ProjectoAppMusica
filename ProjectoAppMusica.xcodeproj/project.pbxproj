@@ -24,7 +24,8 @@
 		04F74EE11CB5915A003C9AC2 /* ProcurarResultadosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F74EE01CB5915A003C9AC2 /* ProcurarResultadosViewController.m */; };
 		04F74EE41CB5916B003C9AC2 /* ProcurarResultadosDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F74EE31CB5916B003C9AC2 /* ProcurarResultadosDetailViewController.m */; };
 		04F74EE81CB592DE003C9AC2 /* Songs.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F74EE71CB592DE003C9AC2 /* Songs.m */; };
-		C8C2B09E1CBDA6C8000E862D /* Songs+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = C8C2B09D1CBDA6C8000E862D /* Songs+CoreDataProperties.m */; };
+		C86C279C1CC98B2000666C09 /* FavoriteSongs.m in Sources */ = {isa = PBXBuildFile; fileRef = C86C279B1CC98B2000666C09 /* FavoriteSongs.m */; };
+		C86C279F1CC992E800666C09 /* FavoriteSongs+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = C86C279E1CC992E800666C09 /* FavoriteSongs+CoreDataProperties.m */; };
 		D0B52FC2592790DAACD5A326 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7968360B39EC235EDF9E3EEB /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -63,8 +64,10 @@
 		7968360B39EC235EDF9E3EEB /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC54F07718B61DF26F3B4A88 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		B1B0DE2A94700603276E916E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		C8C2B09C1CBDA6C8000E862D /* Songs+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Songs+CoreDataProperties.h"; sourceTree = "<group>"; };
-		C8C2B09D1CBDA6C8000E862D /* Songs+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Songs+CoreDataProperties.m"; sourceTree = "<group>"; };
+		C86C279A1CC98B2000666C09 /* FavoriteSongs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoriteSongs.h; sourceTree = "<group>"; };
+		C86C279B1CC98B2000666C09 /* FavoriteSongs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoriteSongs.m; sourceTree = "<group>"; };
+		C86C279D1CC992E800666C09 /* FavoriteSongs+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FavoriteSongs+CoreDataProperties.h"; sourceTree = "<group>"; };
+		C86C279E1CC992E800666C09 /* FavoriteSongs+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FavoriteSongs+CoreDataProperties.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,8 +158,10 @@
 			children = (
 				04F74EE61CB592DE003C9AC2 /* Songs.h */,
 				04F74EE71CB592DE003C9AC2 /* Songs.m */,
-				C8C2B09C1CBDA6C8000E862D /* Songs+CoreDataProperties.h */,
-				C8C2B09D1CBDA6C8000E862D /* Songs+CoreDataProperties.m */,
+				C86C279A1CC98B2000666C09 /* FavoriteSongs.h */,
+				C86C279B1CC98B2000666C09 /* FavoriteSongs.m */,
+				C86C279D1CC992E800666C09 /* FavoriteSongs+CoreDataProperties.h */,
+				C86C279E1CC992E800666C09 /* FavoriteSongs+CoreDataProperties.m */,
 			);
 			name = ModelClasses;
 			sourceTree = "<group>";
@@ -299,10 +304,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C8C2B09E1CBDA6C8000E862D /* Songs+CoreDataProperties.m in Sources */,
 				04F74EE41CB5916B003C9AC2 /* ProcurarResultadosDetailViewController.m in Sources */,
 				04F74ED81CB5912D003C9AC2 /* FavoritosViewController.m in Sources */,
+				C86C279F1CC992E800666C09 /* FavoriteSongs+CoreDataProperties.m in Sources */,
 				04F74ED21CB59101003C9AC2 /* DestaquesViewController.m in Sources */,
+				C86C279C1CC98B2000666C09 /* FavoriteSongs.m in Sources */,
 				04F74EDE1CB59149003C9AC2 /* ProcurarViewController.m in Sources */,
 				04C2C4EB1CB2DCA70023F1C5 /* ViewController.m in Sources */,
 				04F74EE11CB5915A003C9AC2 /* ProcurarResultadosViewController.m in Sources */,

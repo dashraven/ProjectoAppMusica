@@ -1,5 +1,5 @@
 //
-//  Songs+CoreDataProperties.h
+//  FavoriteSongs+CoreDataProperties.h
 //  ProjectoAppMusica
 //
 //  Created by dash on 21/04/16.
@@ -9,17 +9,19 @@
 //  to delete and recreate this implementation file for your updated model.
 //
 
-#import "Songs.h"
+#import "FavoriteSongs.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface Songs (CoreDataProperties)
+@interface FavoriteSongs (CoreDataProperties)
 
-@property (nullable, nonatomic, retain) NSString *albumphoto;
 @property (nullable, nonatomic, retain) NSString *artist;
+@property (nullable, nonatomic, retain) NSString *lyrics;
 @property (nullable, nonatomic, retain) NSString *duration;
-@property (nullable, nonatomic, retain) NSString *lyricts;
 @property (nullable, nonatomic, retain) NSString *title;
+@property (nullable, nonatomic, retain) NSString *albumPhoto;
+@property (nullable, nonatomic, retain) NSString *thumbURL;
+@property (nullable, nonatomic, retain) NSString *favorite;
 
 @end
 
