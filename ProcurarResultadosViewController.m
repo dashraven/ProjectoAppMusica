@@ -8,9 +8,11 @@
 
 #import "ProcurarResultadosViewController.h"
 #import "ProcurarResultadosDetailViewController.h"
+#import "FavoritosDetailViewController.h"
 #import "AFNetworking/AFNetworking.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "Songs.h"
+#import "AppDelegate.h"
 
 @interface ProcurarResultadosViewController () <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableViewProcura;
@@ -108,8 +110,19 @@
     labelArtist.text = [NSString stringWithFormat:@"%@", s.title];
     labelDuration.text = [NSString stringWithFormat:@"%@", s.duration];
     [albumPhoto sd_setImageWithURL:[NSURL URLWithString:s.thumbURL]];
-    [star setImage:[UIImage imageNamed:@"star"]];
-
+ 
+    AppDelegate *delegate = [UIApplication sharedApplication].delegate;
+    NSManagedObjectContext *context = delegate.managedObjectContext;
+    NSFetchRequest *check = [NSFetchRequest fetchRequestWithEntityName:@"FavoriteSongs"];
+    [check setPredicate:[NSPredicate predicateWithFormat:@"title = %@",_foundSongs[indexPath.row].title]];
+    NSArray *checkResults = [context executeFetchRequest:check error:nil];
+    if (checkResults.count > 0) {
+        [star setImage:[UIImage imageNamed:@"ic_star_48pt"]];
+    } else {
+        [star setImage:[UIImage imageNamed:@"ic_star_outline_48pt"]];
+    }
+    
+    
     return cell;
 }
 
@@ -117,10 +130,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    
     Songs *s = _foundSongs[indexPath.row];
 
-    [self performSegueWithIdentifier:@"ProcuraResultadosToFavoritosDetalhes" sender:s];
+    [self performSegueWithIdentifier:@"ProcuraToDetalhes" sender:s];
     
 }
 
@@ -128,6 +140,8 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    
+
     
     ProcurarResultadosDetailViewController *prdvc = segue.destinationViewController;
     prdvc.searchedsongs = sender;

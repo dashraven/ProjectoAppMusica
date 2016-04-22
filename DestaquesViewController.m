@@ -8,10 +8,11 @@
 
 #import "DestaquesViewController.h"
 #import "DestaquesDetailViewController.h"
+#import "FavoritosDetailViewController.h"
 #import <AFNetworking.h>
 #import "Songs.h"
-#import <AFNetworking/UIImageView+AFNetworking.h>
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "AppDelegate.h"
 
 @interface DestaquesViewController ()<UITableViewDataSource, UITableViewDelegate>
 
@@ -115,17 +116,27 @@
     
     Songs *s = _topSongs[indexPath.row];
     
-    
-    
-    
     labelTitle.text = [NSString stringWithFormat:@"%@", s.artist];
     labelArtist.text = [NSString stringWithFormat:@"%@", s.title];
     labelDuration.text = [NSString stringWithFormat:@"%@", s.duration];
     [albumPhoto sd_setImageWithURL:[NSURL URLWithString:s.thumbURL]];
-    [star setImage:[UIImage imageNamed:@"star"]];
+    
+    
+    
+    AppDelegate *delegate = [UIApplication sharedApplication].delegate;
+    NSManagedObjectContext *context = delegate.managedObjectContext;
+    NSFetchRequest *check = [NSFetchRequest fetchRequestWithEntityName:@"FavoriteSongs"];
+    [check setPredicate:[NSPredicate predicateWithFormat:@"title = %@",_topSongs[indexPath.row].title]];
+    NSArray *checkResults = [context executeFetchRequest:check error:nil];
+    if (checkResults.count > 0) {
+        [star setImage:[UIImage imageNamed:@"ic_star_48pt"]];
+    } else {
+        [star setImage:[UIImage imageNamed:@"ic_star_outline_48pt"]];
+    }
     
     
     return cell;
+
 }
 
 #pragma mark - UITableViewDelegate Methods
@@ -134,8 +145,8 @@
     
     Songs *s = _topSongs[indexPath.row];
     
-    [self performSegueWithIdentifier:@"DestaquesToFavoritosDetalhes" sender:s];
-    //[self performSegueWithIdentifier:@"DestaquesToDestaquesDetalhes" sender:s];
+    
+    [self performSegueWithIdentifier:@"DestaquesToDetalhes" sender:s];
     
 }
 
@@ -144,6 +155,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     
+
     DestaquesDetailViewController *ddvc = segue.destinationViewController;
     ddvc.highlightsongs = sender;
     

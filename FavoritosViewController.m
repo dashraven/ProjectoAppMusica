@@ -66,33 +66,19 @@
     labelTitle.text = [NSString stringWithFormat:@"%@", f.artist];
     labelArtist.text = [NSString stringWithFormat:@"%@", f.title];
     labelDuration.text = [NSString stringWithFormat:@"%@", f.duration];
+    [albumPhoto sd_setImageWithURL:[NSURL URLWithString:f.thumbURL]];
+    
     
     
     AppDelegate *delegate = [UIApplication sharedApplication].delegate;
     NSManagedObjectContext *context = delegate.managedObjectContext;
-    
-    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"FavoriteSongs"];
-    
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"artist=%@", f.artist];
-    [request setPredicate:predicate];
-    
-    NSArray *check = [context executeFetchRequest:request error:nil];
-    
-    if (check.count == 0){
-        star.image = [UIImage imageNamed:@"ic_star_outline_48pt"];
+    NSFetchRequest *check = [NSFetchRequest fetchRequestWithEntityName:@"FavoriteSongs"];
+    [check setPredicate:[NSPredicate predicateWithFormat:@"title = %@",_allFavoriteSongs[indexPath.row].title]];
+    NSArray *checkResults = [context executeFetchRequest:check error:nil];
+    if (checkResults.count > 0) {
+        [star setImage:[UIImage imageNamed:@"ic_star_48pt"]];
     } else {
-        star.image = [UIImage imageNamed:@"ic_star_48pt"];
-    }
-    
-    
-    [albumPhoto sd_setImageWithURL:[NSURL URLWithString:f.thumbURL]];
-    
-    if (f.thumbURL == nil){
-        
-        NSString *albumPhotoPath = [delegate.applicationDocumentsDirectory.path stringByAppendingPathComponent:f.favorite];
-        
-        albumPhoto.image = [UIImage imageWithContentsOfFile:albumPhotoPath];
-        
+        [star setImage:[UIImage imageNamed:@"ic_star_outline_48pt"]];
     }
     
     
@@ -100,21 +86,6 @@
     
 }
 
-
-
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        
-        AppDelegate *delegate = [UIApplication sharedApplication].delegate;
-        NSManagedObjectContext *context = delegate.managedObjectContext;
-        
-        [context deleteObject:_allFavoriteSongs[indexPath.row]];
-        [delegate saveContext];
-        
-        
-        [self showFavorites];
-    }
-}
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     

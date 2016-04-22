@@ -31,9 +31,6 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.addFav setBackgroundImage:[UIImage imageNamed:@"ic_star_48pt.png"] forState:UIControlStateNormal];
-    
-  
     
     self.labelTitle.text = self.myFavoriteSongs.title;
     self.labelArtist.text = self.myFavoriteSongs.artist;
@@ -42,9 +39,7 @@
     self.textLyrics.text = self.myFavoriteSongs.lyrics;
     
 }
-
-- (IBAction)clickedStar:(id)sender {
-    
+- (IBAction)clickedAddFav:(id)sender {
     AppDelegate *delegate = [UIApplication sharedApplication].delegate;
     NSManagedObjectContext *context = delegate.managedObjectContext;
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"FavoriteSongs"];
@@ -71,23 +66,9 @@
     }
     [delegate saveContext];
     [self.navigationController popViewControllerAnimated:YES];
+    
 }
 
-    
-        
-    
-        
 
-
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

@@ -8,10 +8,12 @@
 
 #import "UltimasViewController.h"
 #import "UltimasDetailViewController.h"
+#import "FavoritosDetailViewController.h"
 #import <AFNetworking.h>
 #import "Songs.h"
 #import <AFNetworking/UIImageView+AFNetworking.h>
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "AppDelegate.h"
 
 @interface UltimasViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -116,15 +118,25 @@ AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     
     Songs *s = _recentSongs[indexPath.row];
     
-
-    
-    
     labelTitle.text = [NSString stringWithFormat:@"%@", s.artist];
     labelArtist.text = [NSString stringWithFormat:@"%@", s.title];
     labelDuration.text = [NSString stringWithFormat:@"%@", s.duration];
     [albumPhoto sd_setImageWithURL:[NSURL URLWithString:s.thumbURL]];
-    [star setImage:[UIImage imageNamed:@"star"]];
+  
     
+
+    AppDelegate *delegate = [UIApplication sharedApplication].delegate;
+    NSManagedObjectContext *context = delegate.managedObjectContext;
+    NSFetchRequest *check = [NSFetchRequest fetchRequestWithEntityName:@"FavoriteSongs"];
+    [check setPredicate:[NSPredicate predicateWithFormat:@"title = %@",_recentSongs[indexPath.row].title]];
+    NSArray *checkResults = [context executeFetchRequest:check error:nil];
+    if (checkResults.count > 0) {
+        [star setImage:[UIImage imageNamed:@"ic_star_48pt"]];
+    } else {
+        [star setImage:[UIImage imageNamed:@"ic_star_outline_48pt"]];
+    }
+    
+
     return cell;
 }
 
@@ -134,9 +146,8 @@ AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     
     Songs *s = _recentSongs[indexPath.row];
     
-    [self performSegueWithIdentifier:@"UltimasToFavoritosDetalhes" sender:s];
     
-    //[self performSegueWithIdentifier:@"UltimasToUltimasDetalhes" sender:s];
+    [self performSegueWithIdentifier:@"UltimasToDetalhes" sender:s];
     
 }
 
@@ -144,6 +155,7 @@ AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    
     
     UltimasDetailViewController *udvc = segue.destinationViewController;
     udvc.latestsongs = sender;
