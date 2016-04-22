@@ -9,9 +9,11 @@
 #import <UIKit/UIKit.h>
 
 @class Songs;
+@class FavoriteSongs;
 
 @interface UltimasDetailViewController : UIViewController
 
 @property(strong, nonatomic) Songs *latestsongs;
+@property (strong, nonatomic) FavoriteSongs *myFavoriteSongs;
 
 @end

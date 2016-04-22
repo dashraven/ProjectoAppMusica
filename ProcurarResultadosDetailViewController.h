@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @class Songs;
+@class FavoriteSongs;
 @interface ProcurarResultadosDetailViewController : UIViewController
 @property (strong, nonatomic) Songs *searchedsongs;
+@property (strong, nonatomic) FavoriteSongs *myFavoriteSongs;
 @end

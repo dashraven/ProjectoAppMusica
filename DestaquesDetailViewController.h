@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 @class Songs;
+@class FavoriteSongs;
 
 @interface DestaquesDetailViewController : UIViewController
-
+@property (strong, nonatomic) FavoriteSongs *myFavoriteSongs;
 @property(strong, nonatomic) Songs *highlightsongs;
 
 @end
