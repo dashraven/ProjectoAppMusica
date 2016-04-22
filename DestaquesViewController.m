@@ -134,7 +134,8 @@
     
     Songs *s = _topSongs[indexPath.row];
     
-    [self performSegueWithIdentifier:@"DestaquesToDestaquesDetalhes" sender:s];
+    [self performSegueWithIdentifier:@"DestaquesToFavoritosDetalhes" sender:s];
+    //[self performSegueWithIdentifier:@"DestaquesToDestaquesDetalhes" sender:s];
     
 }
 

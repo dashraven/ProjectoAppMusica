@@ -18,7 +18,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *labelArtist;
 @property (weak, nonatomic) IBOutlet UILabel *labelDuration;
 @property (weak, nonatomic) IBOutlet UITextView *textLyrics;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *switchFavoritos;
+
 @end
 
 @implementation ProcurarResultadosDetailViewController
@@ -29,10 +29,6 @@
     
     NSURL *thumbURL = [NSURL URLWithString:self.searchedsongs.thumbURL];
     
-    [self.albumPhoto sd_setImageWithURL:thumbURL];
-    [self.star setImage:[UIImage imageNamed:@"star"]];
-    
-    
     
     self.labelTitle.text = self.searchedsongs.title;
     self.labelArtist.text = self.searchedsongs.artist;
@@ -41,5 +37,34 @@
     self.textLyrics.text = self.searchedsongs.lyrics;
     
 }
+
+- (IBAction)clickedStar:(id)sender {
+    
+    AppDelegate *delegate = [UIApplication sharedApplication].delegate;
+    NSManagedObjectContext *context = delegate.managedObjectContext;
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"FavoriteSongs"];
+    [request setPredicate:[NSPredicate predicateWithFormat:@"title = %@", self.myFavoriteSongs.title]];
+    fetchResult= [context executeFetchRequest:request error:nil];
+    if (fetchResult.count > 0) {
+        [[NSFileManager defaultManager] removeItemAtPath:[delegate.applicationDocumentsDirectory.path stringByAppendingPathComponent: self.myFavoriteSongs.albumPhoto] error:nil];
+        [context deleteObject:fetchResult[0]];
+    } else {
+        UIImage *albumPhoto = self.albumPhoto.image;
+        NSData *albumPhotoData = UIImagePNGRepresentation(albumPhoto);
+        NSMutableString *albumPhotoFile = [[NSMutableString alloc] initWithString:self.myFavoriteSongs.title];
+        [albumPhotoFile appendString:@".png"];
+        for (int i = 0; i < albumPhotoFile.length; i++) {
+            NSRange posicao = NSMakeRange(i, 1);
+            char letra = [albumPhotoFile characterAtIndex:i];
+            if (letra == ' ') {
+                [albumPhotoFile replaceCharactersInRange:posicao withString:@""];
+            }
+        }
+        NSMutableString *albumPhotoPath = [[NSMutableString alloc] initWithString:[delegate.applicationDocumentsDirectory.path stringByAppendingPathComponent:albumPhotoFile]];
+        [albumPhotoData writeToFile:albumPhotoPath atomically:YES];
+        [FavoriteSongs FavoriteSongsWithArtist:self.myFavoriteSongs.artist title:self.myFavoriteSongs.title duration:self.myFavoriteSongs.duration lyrics:self.myFavoriteSongs.title albumPhoto:albumPhotoFile];
+    }
+    [delegate saveContext];
+    [self.navigationController popViewControllerAnimated:YES];
 
 @end

@@ -26,7 +26,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
+    [self jsonGetSearch]; 
 }
 
 - (void)jsonGetSearch {
@@ -94,6 +94,7 @@
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"protoCell"];
     
+        
     UILabel *labelTitle = [cell viewWithTag:1];
     UILabel *labelArtist = [cell viewWithTag:2];
     UILabel *labelDuration = [cell viewWithTag:3];
@@ -102,8 +103,6 @@
     
     Songs *s = _foundSongs[indexPath.row];
 
-    
-    
     
     labelTitle.text = [NSString stringWithFormat:@"%@", s.artist];
     labelArtist.text = [NSString stringWithFormat:@"%@", s.title];
@@ -118,9 +117,10 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
+    
     Songs *s = _foundSongs[indexPath.row];
 
-    [self performSegueWithIdentifier:@"DestaquesToDestaquesDetalhes" sender:s];
+    [self performSegueWithIdentifier:@"ProcuraResultadosToFavoritosDetalhes" sender:s];
     
 }
 

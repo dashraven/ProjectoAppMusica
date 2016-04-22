@@ -134,7 +134,9 @@ AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     
     Songs *s = _recentSongs[indexPath.row];
     
-    [self performSegueWithIdentifier:@"UltimasToUltimasDetalhes" sender:s];
+    [self performSegueWithIdentifier:@"UltimasToFavoritosDetalhes" sender:s];
+    
+    //[self performSegueWithIdentifier:@"UltimasToUltimasDetalhes" sender:s];
     
 }
 

@@ -120,7 +120,7 @@
     
     FavoriteSongs *f = _allFavoriteSongs[indexPath.row];
     
-    [self performSegueWithIdentifier:@"FavoriteTableToDetail" sender:f];
+    [self performSegueWithIdentifier:@"FavoritostoFavoritosDetalhe" sender:f];
     
 }
 
